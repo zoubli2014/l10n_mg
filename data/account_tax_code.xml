@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- account.tax.code.template -->
+        <record id="taxcode_0" model="account.tax.code.template">
+            <field name="name">Plan de TVA Madagascar</field>
+            <field name="code">taxcode_0</field>
+            <field name="notprintable" eval="0"/>
+        </record>
+
+		<record id="taxcod_100" model="account.tax.code.template">
+            <field name="name">Chiffre d'affaires taxable relatif aux exportations (taux 0%)</field>
+            <field name="code">100</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcode_0"/>
+        </record>
+
+		<record id="taxcod_170" model="account.tax.code.template">
+            <field name="name">Chiffre d'affaires total (lignes 150 + 160)</field>
+            <field name="code">170</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcode_0"/>
+        </record>
+
+		<record id="taxcod_150" model="account.tax.code.template">
+            <field name="name">Chiffre d'affaires taxable total (lignes 105 + 100 + 110 + 115 + 125 +130 + 140)</field>
+            <field name="code">150</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcod_170"/>
+        </record>
+
+		<record id="taxcod_105" model="account.tax.code.template">
+            <field name="name">Chiffre d'affaires taxable sur les opérations transport terrestre de marchandises/hydrocarbure (taux20%)</field>
+            <field name="code">105</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcod_150"/>
+        </record>
+
+		<record id="taxcod_110" model="account.tax.code.template">
+            <field name="name">Chiffre d'affaires taxable relatif aux operations locales, (autre que 105, taux de 20%)</field>
+            <field name="code">110</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcod_150"/>
+        </record>
+
+		<record id="taxcod_115" model="account.tax.code.template">
+            <field name="name">Chiffre d'affaires sur cessions d'immobilisations (taux de 20%)</field>
+            <field name="code">115</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcod_150"/>
+        </record>
+
+		<record id="taxcod_125" model="account.tax.code.template">
+            <field name="name">Chiffre d'affaires relatif aux livraisons a soi-meme (taux de 20%)</field>
+            <field name="code">125</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcod_150"/>
+        </record>
+
+		<record id="taxcod_130" model="account.tax.code.template">
+            <field name="name">Chiffre d'affaires a des personnes presentant une Attestation de destination (AD)</field>
+            <field name="code">130</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcod_150"/>
+        </record>
+
+		<record id="taxcod_140" model="account.tax.code.template">
+            <field name="name">Chiffre d'affaires taxable s/Marches publics dont la TVA est encore non encaissee</field>
+            <field name="code">140</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcod_150"/>
+        </record>
+
+		<record id="taxcod_160" model="account.tax.code.template">
+            <field name="name">Chiffre d'affaires exonéré</field>
+            <field name="code">160</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcod_170"/>
+        </record>
+
+
+        <!-- CA d'achat invisible le x devant indique que c'est invisible et adhoc-->
+        <record id="xtaxcod_1000" model="account.tax.code.template">
+            <field name="name">Achats totaux</field>
+            <field name="code">1000</field>
+            <field name="notprintable" eval="1"/>
+			<field name="parent_id" ref="taxcode_0"/>
+        </record>
+
+        <record id="xtaxcod_1310" model="account.tax.code.template">
+            <field name="name">CA sur les biens destines a la revente</field>
+            <field name="code">1310</field>
+            <field name="notprintable" eval="1"/>
+			<field name="parent_id" ref="xtaxcod_1000"/>
+        </record>
+
+        <record id="xtaxcod_1300" model="account.tax.code.template">
+            <field name="name">Achats de biens locaux destines a la revente</field>
+            <field name="code">1300</field>
+            <field name="notprintable" eval="1"/>
+			<field name="parent_id" ref="xtaxcod_1310"/>
+        </record>
+
+        <record id="xtaxcod_1305" model="account.tax.code.template">
+            <field name="name">Achats de biens importes destines a la revente</field>
+            <field name="code">1305</field>
+            <field name="notprintable" eval="1"/>
+			<field name="parent_id" ref="xtaxcod_1310"/>
+        </record>
+
+        <record id="xtaxcod_1400" model="account.tax.code.template">
+            <field name="name">Bases taxables des investissements</field>
+            <field name="code">1400</field>
+            <field name="notprintable" eval="1"/>
+			<field name="parent_id" ref="xtaxcod_1000"/>
+        </record>
+
+        <record id="xtaxcod_1315" model="account.tax.code.template">
+            <field name="name">Investissements incorporels (importes et/ou locaux) non eligibles</field>
+            <field name="code">1315</field>
+            <field name="notprintable" eval="1"/>
+			<field name="parent_id" ref="xtaxcod_1400"/>
+        </record>
+
+        <record id="xtaxcod_1316" model="account.tax.code.template">
+            <field name="name">Investissements corporels locaux non eligibles</field>
+            <field name="code">1316</field>
+            <field name="notprintable" eval="1"/>
+			<field name="parent_id" ref="xtaxcod_1400"/>
+        </record>
+
+        <record id="xtaxcod_1320" model="account.tax.code.template">
+            <field name="name">Investissements corporels locaux eligibles</field>
+            <field name="code">1320</field>
+            <field name="notprintable" eval="1"/>
+			<field name="parent_id" ref="xtaxcod_1400"/>
+        </record>
+
+		<record id="xtaxcod_1330" model="account.tax.code.template">
+            <field name="name">Investissements corporels importes eligibles</field>
+            <field name="code">1330</field>
+            <field name="notprintable" eval="1"/>
+			<field name="parent_id" ref="xtaxcod_1400"/>
+        </record>
+
+		<record id="xtaxcod_1335" model="account.tax.code.template">
+            <field name="name">Investissements corporels importes non eligibles</field>
+            <field name="code">1335</field>
+            <field name="notprintable" eval="1"/>
+			<field name="parent_id" ref="xtaxcod_1400"/>
+        </record>
+
+        <record id="xtaxcod_1338" model="account.tax.code.template">
+            <field name="name">Achats gazole lies aux operations de transport terrestre de marchandises et hydrocarbu</field>
+            <field name="code">1338</field>
+            <field name="notprintable" eval="1"/>
+			<field name="parent_id" ref="xtaxcod_1400"/>
+        </record>
+
+        <record id="xtaxcod_1340" model="account.tax.code.template">
+            <field name="name">Achats autres biens locaux</field>
+            <field name="code">1340</field>
+            <field name="notprintable" eval="1"/>
+			<field name="parent_id" ref="xtaxcod_1000"/>
+        </record>
+
+        <record id="xtaxcod_1345" model="account.tax.code.template">
+            <field name="name">Achats autres biens importes</field>
+            <field name="code">1345</field>
+            <field name="notprintable" eval="1"/>
+			<field name="parent_id" ref="xtaxcod_1000"/>
+        </record>
+
+        <record id="xtaxcod_1350" model="account.tax.code.template">
+            <field name="name">Achats des services locaux</field>
+            <field name="code">1350</field>
+            <field name="notprintable" eval="1"/>
+			<field name="parent_id" ref="xtaxcod_1000"/>
+        </record>
+
+        <record id="xtaxcod_1355" model="account.tax.code.template">
+            <field name="name">Achats des services importés</field>
+            <field name="code">1355</field>
+            <field name="notprintable" eval="1"/>
+			<field name="parent_id" ref="xtaxcod_1000"/>
+        </record>
+
+        <record id="taxcod_275" model="account.tax.code.template">
+            <field name="name">TVA collectee durant la periode (lignes 210 + 270 + 271)</field>
+            <field name="code">275</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcode_0"/>
+        </record>
+
+		<record id="taxcod_210" model="account.tax.code.template">
+            <field name="name">TVA collectee [(lignes 105 + 110 + 115 + 125) x 20%]</field>
+            <field name="code">210</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcod_275"/>
+        </record>
+
+		<record id="taxcod_270" model="account.tax.code.template">
+            <field name="name">Autres TVA collectees</field>
+            <field name="code">270</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcod_275"/>
+        </record>
+
+		<record id="taxcod_271" model="account.tax.code.template">
+            <field name="name">TVA collectee non encore encaissee sur Marches publics</field>
+            <field name="code">271</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcod_275"/>
+        </record>
+
+		<record id="taxcod_375" model="account.tax.code.template">
+            <field name="name">TVA deductible pour la periode (ligne 310 + 370)</field>
+            <field name="code">375</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcode_0"/>
+        </record>
+
+		<record id="taxcod_310" model="account.tax.code.template">
+            <field name="name">TVA deductibles sur les biens destines a la revente (lignes 300 + 305)</field>
+            <field name="code">310</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcod_375"/>
+        </record>
+
+		<record id="taxcod_300" model="account.tax.code.template">
+            <field name="name">TVA deductibles sur les biens locaux destines a la revente</field>
+            <field name="code">300</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcod_310"/>
+        </record>
+
+		<record id="taxcod_305" model="account.tax.code.template">
+            <field name="name">TVA deductibles sur les biens importes destines a la revente</field>
+            <field name="code">305</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcod_310"/>
+        </record>
+
+        <record id="taxcod_360" model="account.tax.code.template">
+        	<field name="name">TVA deduc aux fins du calc du prorata de deduction(lig 315+316+320+330+335+338+340+345+350+355+359)</field>
+            <field name="code">360</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcode_0"/>
+        </record>
+
+
+		<record id="taxcod_315" model="account.tax.code.template">
+            <field name="name">TVA deductibles sur investissements incorporels (importes et/ou locaux) non eligibles</field>
+            <field name="code">315</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcod_360"/>
+        </record>
+
+		<record id="taxcod_316" model="account.tax.code.template">
+            <field name="name">TVA deductibles sur investissements corporels locaux non eligibles</field>
+            <field name="code">316</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcod_360"/>
+        </record>
+
+		<record id="taxcod_320" model="account.tax.code.template">
+            <field name="name">TVA deductibles sur investissements corporels locaux eligibles</field>
+            <field name="code">320</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcod_360"/>
+        </record>
+
+		<record id="taxcod_330" model="account.tax.code.template">
+            <field name="name">TVA deductibles sur investissements corporels importes eligibles</field>
+            <field name="code">330</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcod_360"/>
+        </record>
+
+		<record id="taxcod_335" model="account.tax.code.template">
+            <field name="name">TVA deductibles sur investissements corporels importes non eligibles</field>
+            <field name="code">335</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcod_360"/>
+        </record>
+
+		<record id="taxcod_338" model="account.tax.code.template">
+            <field name="name">TVA deduc sur achats gazole lies aux operations de transport terrestre de marchandises et hydrocarbure</field>
+            <field name="code">338</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcod_360"/>
+        </record>
+
+		<record id="taxcod_340" model="account.tax.code.template">
+            <field name="name">TVA deductibles sur les autres biens locaux</field>
+            <field name="code">340</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcod_360"/>
+        </record>
+
+        <record id="taxcod_345" model="account.tax.code.template">
+            <field name="name">TVA deductibles sur les autres biens importes</field>
+            <field name="code">345</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcod_360"/>
+        </record>
+
+		<record id="taxcod_350" model="account.tax.code.template">
+            <field name="name">TVA deductibles sur les services locaux</field>
+            <field name="code">350</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcod_360"/>
+        </record>
+
+		<record id="taxcod_355" model="account.tax.code.template">
+            <field name="name">TVA deductibles sur les services importes</field>
+            <field name="code">355</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcod_360"/>
+        </record>
+
+		<record id="taxcod_359" model="account.tax.code.template">
+            <field name="name">Regularisation TVA deductibles sur acquisitions de biens services et d equipements/immeubles(+ ou -)</field>
+            <field name="code">359</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcod_360"/>
+        </record>
+
+		<record id="taxcod_365" model="account.tax.code.template">
+            <field name="name">Taux du prorata de deduction (en terme de pourcentage et suivant le CA de l'annee precedente)</field>
+            <field name="code">365</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcode_0"/>
+        </record>
+
+		<record id="taxcod_370" model="account.tax.code.template">
+            <field name="name">TVA deductible selon le prorata de deduction (ligne 360 x 365)</field>
+            <field name="code">370</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcod_375"/>
+        </record>
+
+		<record id="taxcod_400" model="account.tax.code.template">
+            <field name="name">Credit de TVA du mois (ligne 375 - 275)</field>
+            <field name="code">400</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcode_0"/>
+        </record>
+
+		<record id="taxcod_579" model="account.tax.code.template">
+            <field name="name">Regularisation des TVA deductibles apres application du prorata definitif (en + ou en -)</field>
+            <field name="code">579</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcode_0"/>
+        </record>
+
+		<record id="taxcod_589" model="account.tax.code.template">
+            <field name="name">Autres regularisations des TVA sur les biens destines a la revente (en + ou en -)</field>
+            <field name="code">589</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcode_0"/>
+        </record>
+
+		<record id="taxcod_601" model="account.tax.code.template">
+            <field name="name">Credit reportable de la periode precedente et/ou credit d'ouverture</field>
+            <field name="code">601</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcode_0"/>
+        </record>
+
+		<record id="taxcod_603" model="account.tax.code.template">
+            <field name="name">Credit de TVA rembourse</field>
+            <field name="code">603</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcode_0"/>
+        </record>
+
+		<record id="taxcod_700" model="account.tax.code.template">
+            <field name="name">TVA nette a payer pour la periode  275 - (375 + 601 + 579 + 589)</field>
+            <field name="code">700</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcode_0"/>
+        </record>
+
+		<record id="taxcod_701" model="account.tax.code.template">
+            <field name="name">Credit a reporter   (375 + 601 + 579 + 589) - 275 - 603</field>
+            <field name="code">701</field>
+            <field name="notprintable" eval="0"/>
+			<field name="parent_id" ref="taxcode_0"/>
+        </record>
+
+   </data>
+</openerp>

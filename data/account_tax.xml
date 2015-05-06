@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- account.tax.template -->
+        <record id="att_100" model="account.tax.template">
+            <field name="sequence">100</field>
+            <field name="description">TVA a l'exportation</field>
+            <field name="name">TVA a l'exportation</field>
+            <field name="price_include" eval="0"/>
+            <field name="amount">0</field>
+            <field name="type">percent</field>
+            <field name="type_tax_use">sale</field>
+            <field name="base_code_id" ref="taxcod_100"/>
+            <field name="base_sign">1</field>
+            <field name="tax_sign">1</field>
+            <field name="ref_base_code_id" ref="taxcod_100"/>
+            <field name="ref_base_sign">-1</field>
+            <field name="ref_tax_sign">1</field>
+            <field name="child_depend" eval="0"/>
+            <field name="chart_template_id" ref="l10nmg_chart_template"/>
+        </record>
+
+  		<record id="att_105" model="account.tax.template">
+            <field name="sequence">105</field>
+            <field name="description">TVA locales sur les operations transport terrestre de marchandises/hydrocarb(taux20%)</field>
+            <field name="name">TVA 20% transports et carburants</field>
+            <field name="account_collected_id" ref="pcg_44570"/>
+            <field name="account_paid_id" ref="pcg_44570"/>
+            <field name="price_include" eval="0"/>
+            <field name="amount">0.20</field>
+            <field name="type">percent</field>
+            <field name="type_tax_use">sale</field>
+            <field name="base_code_id" ref="taxcod_105"/>
+            <field name="base_sign">1.00</field>
+            <field name="tax_code_id" ref="taxcod_210"/>
+            <field name="tax_sign">1.00</field>
+            <field name="ref_base_code_id" ref="taxcod_105"/>
+            <field name="ref_base_sign">-1.00</field>
+            <field name="ref_tax_code_id" ref="taxcod_210"/>
+            <field name="ref_tax_sign">-1.00</field>
+            <field name="child_depend" eval="0"/>
+            <field name="chart_template_id" ref="l10nmg_chart_template"/>
+        </record>
+
+       <record id="att_110" model="account.tax.template">
+            <field name="sequence">110</field>
+            <field name="description">TVA sur les operations locales, (autre que 105, taux de 20%)</field>
+            <field name="name">TVA 20% opérations locales</field>
+            <field name="account_collected_id" ref="pcg_44571"/>
+            <field name="account_paid_id" ref="pcg_44571"/>
+            <field name="price_include" eval="0"/>
+            <field name="amount">0.20</field>
+            <field name="type">percent</field>
+            <field name="type_tax_use">sale</field>
+            <field name="base_code_id" ref="taxcod_110"/>
+            <field name="base_sign">1.00</field>
+            <field name="tax_code_id" ref="taxcod_210"/>
+            <field name="tax_sign">1.00</field>
+            <field name="ref_base_code_id" ref="taxcod_110"/>
+            <field name="ref_base_sign">-1.00</field>
+            <field name="ref_tax_code_id" ref="taxcod_210"/>
+            <field name="ref_tax_sign">-1.00</field>
+            <field name="child_depend" eval="0"/>
+            <field name="chart_template_id" ref="l10nmg_chart_template"/>
+        </record>
+
+        	<record id="att_115" model="account.tax.template">
+            <field name="sequence">115</field>
+            <field name="description">TVA sur les sur cessions d'immobilisations (taux de 20%)</field>
+            <field name="name">TVA 20% cession immobilisations</field>
+            <field name="account_collected_id" ref="pcg_44572"/>
+            <field name="account_paid_id" ref="pcg_44572"/>
+            <field name="price_include" eval="0"/>
+            <field name="amount">0.20</field>
+            <field name="type">percent</field>
+            <field name="type_tax_use">sale</field>
+            <field name="base_code_id" ref="taxcod_115"/>
+            <field name="base_sign">1.00</field>
+            <field name="tax_code_id" ref="taxcod_210"/>
+            <field name="tax_sign">1.00</field>
+            <field name="ref_base_code_id" ref="taxcod_115"/>
+            <field name="ref_base_sign">-1.00</field>
+            <field name="ref_tax_code_id" ref="taxcod_210"/>
+            <field name="ref_tax_sign">-1.00</field>
+            <field name="child_depend" eval="0"/>
+            <field name="chart_template_id" ref="l10nmg_chart_template"/>
+        </record>
+
+        <record id="att_125" model="account.tax.template">
+            <field name="sequence">125</field>
+            <field name="description">TVA sur les livraisons a soi-meme (taux de 20%)</field>
+            <field name="name">TVA 20% livraisons a soi-meme</field>
+            <field name="account_collected_id" ref="pcg_44571"/>
+            <field name="account_paid_id" ref="pcg_44571"/>
+            <field name="price_include" eval="0"/>
+            <field name="amount">0.20</field>
+            <field name="type">percent</field>
+            <field name="type_tax_use">sale</field>
+            <field name="base_code_id" ref="taxcod_125"/>
+            <field name="base_sign">1.00</field>
+            <field name="tax_code_id" ref="taxcod_210"/>
+            <field name="tax_sign">1.00</field>
+            <field name="ref_base_code_id" ref="taxcod_125"/>
+            <field name="ref_base_sign">-1.00</field>
+            <field name="ref_tax_code_id" ref="taxcod_210"/>
+            <field name="ref_tax_sign">-1.00</field>
+            <field name="child_depend" eval="0"/>
+            <field name="chart_template_id" ref="l10nmg_chart_template"/>
+        </record>
+
+         <record id="att_130" model="account.tax.template">
+            <field name="sequence">130</field>
+            <field name="description">TVA sur les ventes a des personnes presentant une Attestation de destination AD</field>
+            <field name="name">TVA 0% attestation de destination</field>
+            <field name="price_include" eval="0"/>
+            <field name="amount">0.00</field>
+            <field name="type">percent</field>
+            <field name="type_tax_use">sale</field>
+            <field name="base_code_id" ref="taxcod_130"/>
+            <field name="base_sign">1.00</field>
+            <field name="tax_sign">1.00</field>
+            <field name="ref_base_code_id" ref="taxcod_130"/>
+            <field name="ref_base_sign">-1.00</field>
+            <field name="ref_tax_sign">-1.00</field>
+            <field name="child_depend" eval="0"/>
+            <field name="chart_template_id" ref="l10nmg_chart_template"/>
+        </record>
+
+        <record id="att_140" model="account.tax.template">
+            <field name="sequence">140</field>
+            <field name="description">TVA non encaissee sur s/Marches publics</field>
+            <field name="name">TVA 20% non encaisse marches publics</field>
+            <field name="account_collected_id" ref="pcg_44573"/>
+            <field name="account_paid_id" ref="pcg_44573"/>
+            <field name="price_include" eval="0"/>
+            <field name="amount">0.20</field>
+            <field name="type">percent</field>
+            <field name="type_tax_use">sale</field>
+            <field name="base_code_id" ref="taxcod_140"/>
+            <field name="base_sign">1.00</field>
+            <field name="tax_code_id" ref="taxcod_271"/>
+            <field name="tax_sign">1.00</field>
+            <field name="ref_base_code_id" ref="taxcod_140"/>
+            <field name="ref_base_sign">-1.00</field>
+            <field name="ref_tax_code_id" ref="taxcod_271"/>
+            <field name="ref_tax_sign">-1.00</field>
+            <field name="child_depend" eval="0"/>
+            <field name="chart_template_id" ref="l10nmg_chart_template"/>
+        </record>
+
+          <record id="att_160" model="account.tax.template">
+            <field name="sequence">160</field>
+            <field name="description">TVA 0% CA exonérés</field>
+            <field name="name">TVA 0% CA exonérés</field>
+            <field name="price_include" eval="0"/>
+            <field name="amount">0.00</field>
+            <field name="type">none</field>
+            <field name="type_tax_use">sale</field>
+            <field name="base_code_id" ref="taxcod_160"/>
+            <field name="base_sign">1.00</field>
+            <field name="tax_sign">1.00</field>
+            <field name="ref_base_code_id" ref="taxcod_160"/>
+            <field name="ref_base_sign">-1.00</field>
+            <field name="ref_tax_sign">-1.00</field>
+            <field name="child_depend" eval="0"/>
+            <field name="chart_template_id" ref="l10nmg_chart_template"/>
+        </record>
+
+
+        <record id="att_ded_300" model="account.tax.template">
+            <field name="sequence">300</field>
+            <field name="description">TVA deductibles sur les biens locaux destines a la revente</field>
+            <field name="name">TVA deductibles sur les biens locaux destines a la revente</field>
+            <field name="account_collected_id" ref="pcg_44561"/>
+            <field name="account_paid_id" ref="pcg_44561"/>
+            <field name="price_include" eval="0"/>
+            <field name="amount">0.20</field>
+            <field name="type">percent</field>
+            <field name="type_tax_use">purchase</field>
+            <field name="base_code_id" ref="xtaxcod_1300"/>
+            <field name="base_sign">1.00</field>
+            <field name="tax_code_id" ref="taxcod_300"/>
+            <field name="tax_sign">1.00</field>
+            <field name="ref_base_code_id" ref="xtaxcod_1300"/>
+            <field name="ref_base_sign">-1.00</field>
+            <field name="ref_tax_code_id" ref="taxcod_300"/>
+            <field name="ref_tax_sign">-1.00</field>
+            <field name="child_depend" eval="0"/>
+            <field name="chart_template_id" ref="l10nmg_chart_template"/>
+        </record>
+
+        <record id="att_ded_305" model="account.tax.template">
+            <field name="sequence">305</field>
+            <field name="description">TVA deductibles sur les biens importés destines a la revente</field>
+            <field name="name">TVA deductibles sur les biens importés destines a la revente</field>
+            <field name="account_collected_id" ref="pcg_44562"/>
+            <field name="account_paid_id" ref="pcg_44562"/>
+            <field name="price_include" eval="0"/>
+            <field name="amount">0.20</field>
+            <field name="type">percent</field>
+            <field name="type_tax_use">purchase</field>
+            <field name="base_code_id" ref="xtaxcod_1305"/>
+            <field name="base_sign">1.00</field>
+            <field name="tax_code_id" ref="taxcod_305"/>
+            <field name="tax_sign">1.00</field>
+            <field name="ref_base_code_id" ref="xtaxcod_1305"/>
+            <field name="ref_base_sign">-1.00</field>
+            <field name="ref_tax_code_id" ref="taxcod_305"/>
+            <field name="ref_tax_sign">-1.00</field>
+            <field name="child_depend" eval="0"/>
+            <field name="chart_template_id" ref="l10nmg_chart_template"/>
+        </record>
+
+
+       <record id="att_ded_315" model="account.tax.template">
+            <field name="sequence">315</field>
+            <field name="description">TVA deductibles sur Investissements incorporels (importes et/ou locaux) non eligibles</field>
+            <field name="name">TVA deductibles sur inv. incorp. non eligibles</field>
+            <field name="account_collected_id" ref="pcg_44563"/>
+            <field name="account_paid_id" ref="pcg_44563"/>
+            <field name="price_include" eval="0"/>
+            <field name="amount">0.20</field>
+            <field name="type">percent</field>
+            <field name="type_tax_use">purchase</field>
+            <field name="base_code_id" ref="xtaxcod_1315"/>
+            <field name="base_sign">1.00</field>
+            <field name="tax_code_id" ref="taxcod_315"/>
+            <field name="tax_sign">1.00</field>
+            <field name="ref_base_code_id" ref="xtaxcod_1315"/>
+            <field name="ref_base_sign">-1.00</field>
+            <field name="ref_tax_code_id" ref="taxcod_315"/>
+            <field name="ref_tax_sign">-1.00</field>
+            <field name="child_depend" eval="0"/>
+            <field name="chart_template_id" ref="l10nmg_chart_template"/>
+        </record>
+
+ 		<record id="att_ded_316" model="account.tax.template">
+            <field name="sequence">316</field>
+            <field name="description">TVA deductibles sur investissements corporels locaux non eligibles</field>
+            <field name="name">TVA deductibles sur inv. corp. loc. non eligibles</field>
+            <field name="account_collected_id" ref="pcg_44564"/>
+            <field name="account_paid_id" ref="pcg_44564"/>
+            <field name="price_include" eval="0"/>
+            <field name="amount">0.20</field>
+            <field name="type">percent</field>
+            <field name="type_tax_use">purchase</field>
+            <field name="base_code_id" ref="xtaxcod_1316"/>
+            <field name="base_sign">1.00</field>
+            <field name="tax_code_id" ref="taxcod_316"/>
+            <field name="tax_sign">1.00</field>
+            <field name="ref_base_code_id" ref="xtaxcod_1316"/>
+            <field name="ref_base_sign">-1.00</field>
+            <field name="ref_tax_code_id" ref="taxcod_316"/>
+            <field name="ref_tax_sign">-1.00</field>
+            <field name="child_depend" eval="0"/>
+            <field name="chart_template_id" ref="l10nmg_chart_template"/>
+        </record>
+
+		<record id="att_ded_320" model="account.tax.template">
+            <field name="sequence">320</field>
+            <field name="description">TVA deductibles sur investissements corporels locaux eligibles</field>
+            <field name="name">TVA deductibles sur inv. corp. loc. eligibles</field>
+            <field name="account_collected_id" ref="pcg_44565"/>
+            <field name="account_paid_id" ref="pcg_44565"/>
+            <field name="price_include" eval="0"/>
+            <field name="amount">0.20</field>
+            <field name="type">percent</field>
+            <field name="type_tax_use">purchase</field>
+            <field name="base_code_id" ref="xtaxcod_1320"/>
+            <field name="base_sign">1.00</field>
+            <field name="tax_code_id" ref="taxcod_320"/>
+            <field name="tax_sign">1.00</field>
+            <field name="ref_base_code_id" ref="xtaxcod_1320"/>
+            <field name="ref_base_sign">-1.00</field>
+            <field name="ref_tax_code_id" ref="taxcod_320"/>
+            <field name="ref_tax_sign">-1.00</field>
+            <field name="child_depend" eval="0"/>
+            <field name="chart_template_id" ref="l10nmg_chart_template"/>
+        </record>
+
+        <record id="att_ded_330" model="account.tax.template">
+            <field name="sequence">330</field>
+            <field name="description">TVA deductibles sur investissements corporels importes eligibles</field>
+            <field name="name">TVA deductibles sur inv. corp. importes. eligibles</field>
+            <field name="account_collected_id" ref="pcg_44566"/>
+            <field name="account_paid_id" ref="pcg_44566"/>
+            <field name="price_include" eval="0"/>
+            <field name="amount">0.20</field>
+            <field name="type">percent</field>
+            <field name="type_tax_use">purchase</field>
+            <field name="base_code_id" ref="xtaxcod_1330"/>
+            <field name="base_sign">1.00</field>
+            <field name="tax_code_id" ref="taxcod_330"/>
+            <field name="tax_sign">1.00</field>
+            <field name="ref_base_code_id" ref="xtaxcod_1330"/>
+            <field name="ref_base_sign">-1.00</field>
+            <field name="ref_tax_code_id" ref="taxcod_330"/>
+            <field name="ref_tax_sign">-1.00</field>
+            <field name="child_depend" eval="0"/>
+            <field name="chart_template_id" ref="l10nmg_chart_template"/>
+        </record>
+
+         <record id="att_ded_335" model="account.tax.template">
+            <field name="sequence">335</field>
+            <field name="description">TVA deductibles sur investissements corporels importes non eligibles</field>
+            <field name="name">TVA deductibles sur inv. corp. importes non eligibles</field>
+            <field name="account_collected_id" ref="pcg_44567"/>
+            <field name="account_paid_id" ref="pcg_44567"/>
+            <field name="price_include" eval="0"/>
+            <field name="amount">0.20</field>
+            <field name="type">percent</field>
+            <field name="type_tax_use">purchase</field>
+            <field name="base_code_id" ref="xtaxcod_1335"/>
+            <field name="base_sign">1.00</field>
+            <field name="tax_code_id" ref="taxcod_335"/>
+            <field name="tax_sign">1.00</field>
+            <field name="ref_base_code_id" ref="xtaxcod_1335"/>
+            <field name="ref_base_sign">-1.00</field>
+            <field name="ref_tax_code_id" ref="taxcod_335"/>
+            <field name="ref_tax_sign">-1.00</field>
+            <field name="child_depend" eval="0"/>
+            <field name="chart_template_id" ref="l10nmg_chart_template"/>
+        </record>
+
+        <record id="att_ded_338" model="account.tax.template">
+            <field name="sequence">338</field>
+            <field name="description">TVA deduc sur achats gazole lies aux operations de transport terrestre de marchandises et hydrocarbure</field>
+            <field name="name">TVA deductibles sur achats gazole</field>
+            <field name="account_collected_id" ref="pcg_44568"/>
+            <field name="account_paid_id" ref="pcg_44568"/>
+            <field name="price_include" eval="0"/>
+            <field name="amount">0.20</field>
+            <field name="type">percent</field>
+            <field name="type_tax_use">purchase</field>
+            <field name="base_code_id" ref="xtaxcod_1338"/>
+            <field name="base_sign">1.00</field>
+            <field name="tax_code_id" ref="taxcod_338"/>
+            <field name="tax_sign">1.00</field>
+            <field name="ref_base_code_id" ref="xtaxcod_1338"/>
+            <field name="ref_base_sign">-1.00</field>
+            <field name="ref_tax_code_id" ref="taxcod_338"/>
+            <field name="ref_tax_sign">-1.00</field>
+            <field name="child_depend" eval="0"/>
+            <field name="chart_template_id" ref="l10nmg_chart_template"/>
+        </record>
+
+         <record id="att_ded_340" model="account.tax.template">
+            <field name="sequence">340</field>
+            <field name="description">TVA deductibles sur les autres biens locaux</field>
+            <field name="name">TVA deductibles sur les autres biens locaux</field>
+            <field name="account_collected_id" ref="pcg_445691"/>
+            <field name="account_paid_id" ref="pcg_445691"/>
+            <field name="price_include" eval="0"/>
+            <field name="amount">0.20</field>
+            <field name="type">percent</field>
+            <field name="type_tax_use">purchase</field>
+            <field name="base_code_id" ref="xtaxcod_1340"/>
+            <field name="base_sign">1.00</field>
+            <field name="tax_code_id" ref="taxcod_340"/>
+            <field name="tax_sign">1.00</field>
+            <field name="ref_base_code_id" ref="xtaxcod_1340"/>
+            <field name="ref_base_sign">-1.00</field>
+            <field name="ref_tax_code_id" ref="taxcod_340"/>
+            <field name="ref_tax_sign">-1.00</field>
+            <field name="child_depend" eval="0"/>
+            <field name="chart_template_id" ref="l10nmg_chart_template"/>
+        </record>
+
+        <record id="att_ded_345" model="account.tax.template">
+            <field name="sequence">345</field>
+            <field name="description">TVA deductibles sur les autres biens importes</field>
+            <field name="name">TVA deductibles sur les autres biens importes</field>
+            <field name="account_collected_id" ref="pcg_445692"/>
+            <field name="account_paid_id" ref="pcg_445692"/>
+            <field name="price_include" eval="0"/>
+            <field name="amount">0.20</field>
+            <field name="type">percent</field>
+            <field name="type_tax_use">purchase</field>
+            <field name="base_code_id" ref="xtaxcod_1345"/>
+            <field name="base_sign">1.00</field>
+            <field name="tax_code_id" ref="taxcod_345"/>
+            <field name="tax_sign">1.00</field>
+            <field name="ref_base_code_id" ref="xtaxcod_1345"/>
+            <field name="ref_base_sign">-1.00</field>
+            <field name="ref_tax_code_id" ref="taxcod_345"/>
+            <field name="ref_tax_sign">-1.00</field>
+            <field name="child_depend" eval="0"/>
+            <field name="chart_template_id" ref="l10nmg_chart_template"/>
+        </record>
+
+        <record id="att_ded_350" model="account.tax.template">
+            <field name="sequence">350</field>
+            <field name="description">TVA deductibles sur les services locaux</field>
+            <field name="name">TVA deductibles sur les services locaux</field>
+            <field name="account_collected_id" ref="pcg_445693"/>
+            <field name="account_paid_id" ref="pcg_445693"/>
+            <field name="price_include" eval="0"/>
+            <field name="amount">0.20</field>
+            <field name="type">percent</field>
+            <field name="type_tax_use">purchase</field>
+            <field name="base_code_id" ref="xtaxcod_1350"/>
+            <field name="base_sign">1.00</field>
+            <field name="tax_code_id" ref="taxcod_350"/>
+            <field name="tax_sign">1.00</field>
+            <field name="ref_base_code_id" ref="xtaxcod_1350"/>
+            <field name="ref_base_sign">-1.00</field>
+            <field name="ref_tax_code_id" ref="taxcod_350"/>
+            <field name="ref_tax_sign">-1.00</field>
+            <field name="child_depend" eval="0"/>
+            <field name="chart_template_id" ref="l10nmg_chart_template"/>
+        </record>
+
+  		<record id="att_ded_355" model="account.tax.template">
+            <field name="sequence">355</field>
+            <field name="description">TVA deductibles sur les services importés</field>
+            <field name="name">TVA deductibles sur les services importés</field>
+            <field name="account_collected_id" ref="pcg_445694"/>
+            <field name="account_paid_id" ref="pcg_445694"/>
+            <field name="price_include" eval="0"/>
+            <field name="amount">0.20</field>
+            <field name="type">percent</field>
+            <field name="type_tax_use">purchase</field>
+            <field name="base_code_id" ref="xtaxcod_1355"/>
+            <field name="base_sign">1.00</field>
+            <field name="tax_code_id" ref="taxcod_355"/>
+            <field name="tax_sign">1.00</field>
+            <field name="ref_base_code_id" ref="xtaxcod_1355"/>
+            <field name="ref_base_sign">-1.00</field>
+            <field name="ref_tax_code_id" ref="taxcod_355"/>
+            <field name="ref_tax_sign">-1.00</field>
+            <field name="child_depend" eval="0"/>
+            <field name="chart_template_id" ref="l10nmg_chart_template"/>
+        </record>
+
+		<record id="att_ded_359" model="account.tax.template">
+            <field name="sequence">359</field>
+            <field name="description">Regularisation TVA deductibles sur acquisitions de biens,services et d equipements/immeuble</field>
+            <field name="name">Regularisation TVA deductibles</field>
+            <field name="account_collected_id" ref="pcg_445695"/>
+            <field name="account_paid_id" ref="pcg_445695"/>
+            <field name="price_include" eval="0"/>
+            <field name="amount">0.00</field>
+            <field name="type">none</field>
+            <field name="type_tax_use">purchase</field>
+            <field name="tax_code_id" ref="taxcod_359"/>
+            <field name="tax_sign">1.00</field>
+            <field name="ref_tax_code_id" ref="taxcod_359"/>
+            <field name="ref_tax_sign">-1.00</field>
+            <field name="child_depend" eval="0"/>
+            <field name="chart_template_id" ref="l10nmg_chart_template"/>
+        </record>
+
+    </data>
+</openerp>
