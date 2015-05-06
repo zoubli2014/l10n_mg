@@ -32,7 +32,7 @@ After installing this module, the Configuration wizard for accounting is launche
 Thus, the pure copy of Chart Template is generated.
 
     """,
-    'author': 'Zoubli (zoubli2014@gmail.com) ',
+    'author': 'Zoubli (zoubli2048@gmail.com) ',
     'depends': [
         'account',
         'account_chart'],
